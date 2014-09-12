@@ -1,0 +1,44 @@
+a.mobile-button:link, a.mobile-button:visited, a.mobile-button:hover, a.mobile-button:active {
+  height: 31px;
+  padding: 10px 0 0 0;
+  text-decoration: none;
+  display: block;
+  color: #000000;
+  cursor: default;
+}
+
+.mobile-button {
+  border: 1px solid #d5d6d6;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  height: 41px;
+  white-space: nowrap;
+
+  &.mobile-button-primary {
+    border-color: #006486;
+    background-color: #5595bf;
+    color: #ffffff;
+  }
+
+  &.mobile-button-dark {
+    border-color: #7c7c7c;
+    background-image: url("/gfx/mobile/buttons/button_dark_bg.png");
+    color: #ffffff !important;
+  }
+
+  &.mobile-button-danger {
+    border-color: #761c18;
+    background: linear-gradient(#aa363b, #8d1f23);
+  }
+
+  &.mobile-button-small {
+    height: 22px !important;
+    padding-top: 3px !important;
+    font-weight: normal;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+}

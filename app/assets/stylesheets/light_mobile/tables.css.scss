@@ -1,0 +1,107 @@
+.mobile-table {
+  border-radius: 10px;
+  padding: 10px;
+  border-spacing: 0px;
+  border-collapse: separate;
+
+  th, td {
+    border-bottom: 1px solid #ababab;
+  }
+
+  thead tr:first-child {
+    th:first-child {
+      border: 1px solid #ababab;
+      border-right: none;
+      border-top-left-radius: 10px;
+    }
+
+    th:last-child {
+      border: 1px solid #ababab;
+      border-left: none;
+      border-top-right-radius: 10px;
+    }
+
+    th:not(:first-child):not(:last-child) {
+      border-top: 1px solid #ababab;
+    }
+
+    th {
+      text-align: left;
+    }
+  }
+
+  /* If only tbody is present and no thead */
+  tbody tr:first-child {
+    td:first-child {
+      border: 1px solid #ababab;
+      border-right: none;
+      border-top-left-radius: 10px;
+    }
+
+    td:last-child {
+      border: 1px solid #ababab;
+      border-left: none;
+      border-top-right-radius: 10px;
+    }
+
+    td:not(:first-child):not(:last-child) {
+      border-top: 1px solid #ababab;
+    }
+  }
+
+  /* If a thead is present, the border of the first td row should not have radius. */
+  thead + tbody tr:first-child {
+    td:first-child {
+      border: 1px solid #ababab;
+      border-right: none;
+      border-top: none;
+      border-top-left-radius: 0px;
+    }
+
+    td:last-child {
+      border: 1px solid #ababab;
+      border-left: none;
+      border-top: none;
+      border-top-right-radius: 0px;
+    }
+
+    td:not(:first-child):not(:last-child) {
+      border-top: none;
+    }
+  }
+
+  tbody tr:last-child {
+    td:first-child {
+      border: 1px solid #ababab;
+      border-top: none;
+      border-right: none;
+      border-bottom-left-radius: 10px;
+    }
+
+    td:last-child {
+      border: 1px solid #ababab;
+      border-top: none;
+      border-left: none;
+      border-bottom-right-radius: 10px;
+    }
+
+    /* If it is the only row. */
+    td:last-child:first-child {
+      border-left: 1px solid #ababab;
+    }
+  }
+
+  tbody tr:not(:last-child) {
+    td:first-child {
+      border-left: 1px solid #ababab;
+    }
+
+    td:last-child {
+      border-right: 1px solid #ababab;
+    }
+  }
+
+  td, th {
+    padding: 10px;
+  }
+}

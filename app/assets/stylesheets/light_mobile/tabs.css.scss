@@ -13,7 +13,7 @@ table.mobile-tabs {
         background-color: #f6f6f6;
         list-style-type: none;
         padding: 10px;
-        text-align: center;
+        text-align: left;
         cursor: pointer;
         width: auto;
       }
@@ -33,6 +33,13 @@ table.mobile-tabs {
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         border-right: 1px solid #ababab;
+      }
+
+      > td.mobile-tab-icon {
+        background-size: auto 75%;
+        background-repeat: no-repeat;
+        background-position: 7px 5px;
+        padding-left: 44px;
       }
     }
   }

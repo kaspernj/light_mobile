@@ -72,6 +72,17 @@ Add a new file "app/assets/javascripts/application_mobile.js.coffee":
 = link_to "Users", users_path, class: ["mobile-button", "mobile-button-danger"], data: {confirm: "Are you sure?"}
 ```
 
+### Tables
+
+```haml
+%table.mobile-table
+  %tbody
+    %tr
+      %td Row 1
+    %tr
+      %td Row 2
+```
+
 ## License
 
 This project rocks and uses MIT-LICENSE.

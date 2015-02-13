@@ -75,6 +75,24 @@ In beginning of the body-element do something like this:
         .mobile-flash{class: "mobile-flash-#{flash_type}"}
           = message
           = link_to _("OK"), "#", class: ["mobile-button", "mobile-flash-ok"]
+
+### Link buttons
+
+```haml
+= link_to "Users", users_path, class: "mobile-button"
+= link_to "Users", users_path, class: ["mobile-button", "mobile-button-primary"]
+= link_to "Users", users_path, class: ["mobile-button", "mobile-button-danger"], data: {confirm: "Are you sure?"}
+```
+
+### Tables
+
+```haml
+%table.mobile-table
+  %tbody
+    %tr
+      %td Row 1
+    %tr
+      %td Row 2
 ```
 
 ## License

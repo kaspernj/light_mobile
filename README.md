@@ -64,6 +64,14 @@ Add a new file "app/assets/javascripts/application_mobile.js.coffee":
 #tab-assigned-users This is the assigned users
 ```
 
+### Link buttons
+
+```haml
+= link_to "Users", users_path, class: "mobile-button"
+= link_to "Users", users_path, class: ["mobile-button", "mobile-button-primary"]
+= link_to "Users", users_path, class: ["mobile-button", "mobile-button-danger"], data: {confirm: "Are you sure?"}
+```
+
 ## License
 
 This project rocks and uses MIT-LICENSE.

@@ -37,6 +37,13 @@ input[type=text], input[type=password], input[type=tel], input[type=email], sele
     display: block;
   }
 
+  .hint {
+    color: grey;
+    padding-bottom: 15px;
+    font-size: 11px;
+    display: block;
+  }
+
   input[type=submit] {
     margin-top: 10px;
   }

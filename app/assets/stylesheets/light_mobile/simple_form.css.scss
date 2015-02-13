@@ -20,6 +20,14 @@ input[type=text], input[type=password], input[type=tel], input[type=email], sele
     }
   }
 
+  .input.time > select.time {
+    width: 60px;
+  }
+
+  .input.date > select.date {
+    width: 120px;
+  }
+
   textarea {
     margin-top: 5px;
     width: 100%;

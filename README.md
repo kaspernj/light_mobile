@@ -64,6 +64,19 @@ Add a new file "app/assets/javascripts/application_mobile.js.coffee":
 #tab-assigned-users This is the assigned users
 ```
 
+### Flash errors
+
+In beginning of the body-element do something like this:
+```haml
+%body
+  - if flash.any?
+    .mobile-flash-messages
+      - flash.each do |flash_type, message|
+        .mobile-flash{class: "mobile-flash-#{flash_type}"}
+          = message
+          = link_to _("OK"), "#", class: ["mobile-button", "mobile-flash-ok"]
+```
+
 ## License
 
 This project rocks and uses MIT-LICENSE.

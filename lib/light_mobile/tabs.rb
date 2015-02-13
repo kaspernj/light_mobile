@@ -12,11 +12,17 @@ class LightMobile::Tabs
     tr = table.add_ele(:tbody).add_ele(:tr)
 
     @tabs.each do |tab|
-      td = tr.add_ele(:td)
+      td = tr.add(:td)
 
       td.classes << "mobile-tab-active" if tab[:active]
       td.data[:tab] = tab[:id]
-      td.add_str tab[:label]
+
+      if tab[:icon]
+        td.css["background-image"] = "url('#{tab[:icon]}')"
+        td.classes << "mobile-tab-icon"
+      end
+
+      td.add_str tab[:label] if tab[:label]
     end
 
     table.html.html_safe

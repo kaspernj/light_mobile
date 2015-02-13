@@ -47,6 +47,11 @@
     td:not(:first-child):not(:last-child) {
       border-top: 1px solid #ababab;
     }
+
+    /* If there is only one row, then the top border should still be shown */
+    td:first-child:last-child {
+      border-top: 1px solid #ababab;
+    }
   }
 
   /* If a thead is present, the border of the first td row should not have radius. */

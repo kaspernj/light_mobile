@@ -4,7 +4,6 @@ a.mobile-button:link, a.mobile-button:visited, a.mobile-button:hover, a.mobile-b
   text-decoration: none;
   display: block;
   color: #000000;
-  cursor: default;
 }
 
 .mobile-button {
@@ -16,6 +15,8 @@ a.mobile-button:link, a.mobile-button:visited, a.mobile-button:hover, a.mobile-b
   text-align: center;
   height: 41px;
   white-space: nowrap;
+  cursor: pointer;
+  margin-bottom: 10px;
 
   &.mobile-button-primary {
     border-color: #006486;
@@ -25,13 +26,14 @@ a.mobile-button:link, a.mobile-button:visited, a.mobile-button:hover, a.mobile-b
 
   &.mobile-button-dark {
     border-color: #7c7c7c;
-    background-image: url("/gfx/mobile/buttons/button_dark_bg.png");
+    background-image: url("/assets/light_mobile/buttons/button_dark_bg.png");
     color: #ffffff !important;
   }
 
   &.mobile-button-danger {
     border-color: #761c18;
     background: linear-gradient(#aa363b, #8d1f23);
+    color: #ffffff !important;
   }
 
   &.mobile-button-small {

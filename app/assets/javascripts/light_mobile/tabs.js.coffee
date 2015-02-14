@@ -1,16 +1,24 @@
 $ ->
-  $("table.mobile-tabs").each ->
-    lightMobileInitTabs($(this))
+  # Initialize all tabs-elements.
+  $("table.mobile-tabs").each -> lightMobileInitTabs($(this))
+
+  # Refresh active tab on back-events.
+  $(window).on "hashchange", -> $("table.mobile-tabs").each -> lightMobileRefreshActiveTab($(this))
 
 lightMobileInitTabs = (tabs) ->
+  return if tabs.data("initialized") == "true"
+  tabs.data("initialized", "true")
+
   tds = $("tbody > tr > td", tabs)
+  tds.click (e) -> lightMobileActivateTab(tabs, $(this))
 
-  tds.click (e) ->
-    lightMobileActivateTab(tabs, $(this))
+  lightMobileRefreshActiveTab(tabs)
 
+lightMobileRefreshActiveTab = (tabs) ->
   if match = location.hash.match(/^#mobile-tab-(.+)$/)
     mobile_tab_active = match[1]
 
+  tds = $("tbody > tr > td", tabs)
   tds.each ->
     tab = $(this)
     active_tab = false
@@ -28,16 +36,8 @@ lightMobileInitTabs = (tabs) ->
       container.addClass("mobile-tabs-container-active")
     else
       tab.removeClass("mobile-tab-active")
+      container.removeClass("mobile-tabs-container-active")
 
 lightMobileActivateTab = (tabs, tab) ->
-  active_tab = $("> tbody > tr > td.mobile-tab-active", tabs)
-  active_tab.removeClass("mobile-tab-active")
-  tab.addClass("mobile-tab-active")
-
-  active_container = $("#" + active_tab.data("tab"))
-  active_container.removeClass("mobile-tabs-container-active")
-
-  new_container = $("#" + tab.data("tab"))
-  new_container.addClass("mobile-tabs-container-active")
-
+  # Changing the hash fires an event that updates the active tab.
   location.hash = "mobile-tab-" + tab.data("tab")

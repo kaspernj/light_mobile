@@ -1,0 +1,41 @@
+!!! 5
+%html
+  %head
+    %title= content_for(:header_title)
+
+    = stylesheet_link_tag "light_mobile/basic_layout", media: "all"
+    = javascript_include_tag "light_mobile/basic_layout"
+    = csrf_meta_tags
+    = content_for(:head)
+
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"}
+  %body{class: ["controller_#{controller_name}", "action_#{action_name}"]}
+    - if flash.any?
+      .mobile-flash-messages
+        - flash.each do |key, val|
+          .mobile-flash{class: "mobile-flash-#{key}"}
+            = val
+            = link_to _("OK"), "#", class: "mobile-button-flash-ok"
+
+    .mobile-left-menu{rowspan: 3}
+      .mobile-left-menu-content
+        = content_for(:menu_items)
+
+    %table.main{cellspacing: 0, cellpadding: 0}
+      %tbody
+        %tr
+          %td.main_header
+            %table.header{cellspacing: 0, cellpadding: 0}
+              %td.header_left
+                .mobile-menu-button
+                  .mobile-menu-button-icon
+                = content_for(:header_left)
+
+              %td.header_title= yield(:header_title)
+
+              - if header_right_content = content_for(:header_right).presence
+                %td.header_right= header_right_content
+        %tr
+          %td.main_content
+            .content
+              = yield

@@ -17,30 +17,66 @@ a.mobile-button:link, a.mobile-button:visited, a.mobile-button:hover, a.mobile-b
   white-space: nowrap;
   cursor: pointer;
   margin-bottom: 10px;
+}
 
-  &.mobile-button-primary {
-    border-color: #006486;
-    background-color: #5595bf;
-    color: #ffffff;
-  }
+.mobile-button-dark {
+  @extend .mobile-button;
 
-  &.mobile-button-dark {
-    border-color: #7c7c7c;
-    background-image: url("/assets/light_mobile/buttons/button_dark_bg.png");
-    color: #ffffff !important;
-  }
+  border-color: #7c7c7c;
+  background-image: url("/assets/light_mobile/buttons/button_dark_bg.png");
+  color: #ffffff !important;
+}
 
-  &.mobile-button-danger {
-    border-color: #761c18;
-    background: linear-gradient(#aa363b, #8d1f23);
-    color: #ffffff !important;
-  }
+.mobile-button-danger {
+  @extend .mobile-button;
 
-  &.mobile-button-small {
-    height: 22px !important;
-    padding-top: 3px !important;
-    font-weight: normal;
-    font-size: 13px;
-    border-radius: 5px;
-  }
+  border-color: #761c18;
+  background: linear-gradient(#aa363b, #8d1f23);
+  color: #ffffff !important;
+}
+
+.mobile-button-primary {
+  @extend .mobile-button;
+
+  border-color: #006486;
+  background-color: #5595bf;
+  color: #ffffff;
+}
+
+.mobile-button-small {
+  @extend .mobile-button;
+
+  height: 22px !important;
+  padding-top: 3px !important;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.mobile-button-mini {
+  @extend .mobile-button;
+
+  height: 17px !important;
+  padding-top: 3px !important;
+  font-weight: normal;
+  font-size: 12px;
+  border-radius: 5px;
+  width: 90px;
+}
+
+.mobile-button-header {
+  @extend .mobile-button-mini;
+
+  margin-bottom: 0px;
+  float: right;
+}
+
+.mobile-button-flash-ok {
+  @extend .mobile-button;
+
+  margin-top: 15px;
+  margin-bottom: 0px;
+  background: linear-gradient(#c0c6d2, #606b87);
+  border-color: #212c4c;
+  color: #ffffff !important;
 }

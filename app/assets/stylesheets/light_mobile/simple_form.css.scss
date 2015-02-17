@@ -13,6 +13,11 @@ input[type=text], input[type=password], input[type=tel], input[type=email], inpu
     display: inline-block;
   }
 
+  // Make space between each input.
+  div.input {
+    margin-bottom: 5px;
+  }
+
   .input:not(.boolean) {
     input, select {
       width: 75%;
@@ -20,6 +25,7 @@ input[type=text], input[type=password], input[type=tel], input[type=email], inpu
     }
   }
 
+  // Time- and date-selects should be limited in size to not fill multiple lines.
   .input.time > select.time {
     width: 60px;
   }

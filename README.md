@@ -80,7 +80,7 @@ In beginning of the body-element do something like this:
 
 ```haml
 = link_to "Users", users_path, class: "mobile-button"
-= link_to "Users", users_path, class: ["mobile-button", "mobile-button-primary"]
+= link_to "Users", users_path, class: "mobile-button-primary"
 = link_to "Users", users_path, class: ["mobile-button", "mobile-button-danger"], data: {confirm: "Are you sure?"}
 ```
 

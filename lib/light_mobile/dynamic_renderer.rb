@@ -9,7 +9,7 @@ module LightMobile::DynamicRenderer
         view_paths.each do |view_path|
           ActionView::Template::Handlers.extensions.each do |handler|
             full_path = "#{view_path}/#{controller_path}/#{name}.mobile.#{handler}"
-            next unless File.exists? full_path
+            next unless File.exists?(full_path)
             request.format = :mobile
             self.formats = [:mobile, :html]
           end

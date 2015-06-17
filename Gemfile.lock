@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     light_mobile (0.0.8)
-      html_gen (= 0.0.6)
-      rails (~> 4.0.0)
+      html_gen (>= 0.0.6)
+      rails (>= 4.0.0)
 
 GEM
   remote: https://rubygems.org/

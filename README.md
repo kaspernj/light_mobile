@@ -74,7 +74,7 @@ In beginning of the body-element do something like this:
       - flash.each do |flash_type, message|
         .mobile-flash{class: "mobile-flash-#{flash_type}"}
           = message
-          = link_to _("OK"), "#", class: ["mobile-button", "mobile-flash-ok"]
+          = link_to "OK", "#", class: ["mobile-button", "mobile-flash-ok"]
 
 ### Link buttons
 

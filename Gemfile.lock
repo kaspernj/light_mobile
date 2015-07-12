@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    light_mobile (0.0.9)
+    light_mobile (0.0.10)
       html_gen (>= 0.0.6)
       rails (>= 4.0.0)
 
@@ -105,3 +105,6 @@ DEPENDENCIES
   light_mobile!
   rspec-rails
   sqlite3
+
+BUNDLED WITH
+   1.10.5

@@ -21,6 +21,16 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+### ApplicationHelper
+
+Add this include to your ApplicationHelper.
+
+```ruby
+module ApplicationHelper
+  include LightMobile::ApplicationHelper
+end
+```
+
 ### MimeTypes
 
 Add this to "config/initializers/mime_types.rb":

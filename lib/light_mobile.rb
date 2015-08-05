@@ -1,5 +1,6 @@
 require "light_mobile/engine"
 require "html_gen"
+require "agent_helpers"
 
 module LightMobile
   def self.const_missing(name)

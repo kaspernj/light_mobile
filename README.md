@@ -51,6 +51,23 @@ Add a new file "app/assets/javascripts/application_mobile.js.coffee":
 
 ## Usage
 
+### Basic layout
+
+```haml
+- content_for :menu_items do
+  - if signed_in?
+    .menu_item= link_to t(".frontpage"), root_path
+  - if can? :index, Organization
+    .menu_item= link_to Organization.model_name.human(count: 2), organizations_path
+  .menu_item= link_to t(".sign_out"), destroy_user_session_path, method: :delete
+
+- content_for :head do
+  = stylesheet_link_tag "application_mobile"
+  = javascript_include_tag "application_mobile"
+
+= render "layouts/light_mobile_basic_layout"
+```
+
 ### Tabs
 
 ```haml

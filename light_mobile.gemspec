@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "Lightweight UI for mobile Rails apps."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", ">= 4.0.0"
   s.add_dependency "html_gen", ">= 0.0.6"

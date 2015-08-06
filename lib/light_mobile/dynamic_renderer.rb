@@ -8,6 +8,8 @@ module LightMobile::DynamicRenderer
     end
 
     if render_mobile
+      puts "RenderMobile: #{render_mobile}"
+
       name = args[0]
       name = action_name.to_sym if !name.is_a?(Symbol) && !name.is_a?(String)
 
@@ -15,10 +17,17 @@ module LightMobile::DynamicRenderer
         view_paths.each do |view_path|
           ActionView::Template::Handlers.extensions.each do |handler|
             full_path = "#{view_path}/#{controller_path}/#{name}.mobile.#{handler}"
+            puts "TestingFullPath: #{full_path}"
+
             next unless File.exists?(full_path)
+
+            puts "RENDER AS MOBILE!"
             request.format = :mobile
             self.formats = [:mobile, :html]
+            break
           end
+
+          puts "DONT RENDER AS MOBILE!" unless request.format == :mobile
         end
       end
     end

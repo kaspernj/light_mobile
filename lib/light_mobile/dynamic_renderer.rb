@@ -27,10 +27,13 @@ private
   def light_mobile_view_exists?(name)
     @@light_mobile_view_cache ||= {}
 
-    cache = @@light_mobile_view_cache[controller_name].try(:[], action_name).try(:[], name)
-    cache = light_mobile_generate_view_cache(name) if cache == nil
+    unless Rails.env.development?
+      result = @@light_mobile_view_cache[controller_name].try(:[], action_name).try(:[], name)
+    end
 
-    return cache
+    result = light_mobile_generate_view_cache(name) if result == nil
+
+    return result
   end
 
   def light_mobile_generate_view_cache(name)

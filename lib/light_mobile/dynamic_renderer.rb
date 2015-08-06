@@ -8,30 +8,43 @@ module LightMobile::DynamicRenderer
     end
 
     if render_mobile
-      puts "RenderMobile: #{render_mobile}"
-
       name = args[0]
       name = action_name.to_sym if !name.is_a?(Symbol) && !name.is_a?(String)
 
       if name.is_a? Symbol
-        view_paths.each do |view_path|
-          ActionView::Template::Handlers.extensions.each do |handler|
-            full_path = "#{view_path}/#{controller_path}/#{name}.mobile.#{handler}"
-            puts "TestingFullPath: #{full_path}"
-
-            next unless File.exists?(full_path)
-
-            puts "RENDER AS MOBILE!"
-            request.format = :mobile
-            self.formats = [:mobile, :html]
-            break
-          end
-
-          puts "DONT RENDER AS MOBILE!" unless request.format == :mobile
+        if light_mobile_view_exists?(name)
+          request.format = :mobile
+          self.formats = [:mobile, :html]
         end
       end
     end
 
-    super
+    return super
+  end
+
+private
+
+  def light_mobile_view_exists?(name)
+    @@light_mobile_view_cache ||= {}
+
+    cache = @@light_mobile_view_cache[controller_name].try(:[], action_name).try(:[], name)
+    cache = light_mobile_generate_view_cache(name) if cache == nil
+
+    return cache
+  end
+
+  def light_mobile_generate_view_cache(name)
+    @@light_mobile_view_cache[controller_name] ||= {}
+    @@light_mobile_view_cache[controller_name][action_name] ||= {}
+
+    view_paths.each do |view_path|
+      ActionView::Template::Handlers.extensions.each do |handler|
+        full_path = "#{view_path}/#{controller_path}/#{name}.mobile.#{handler}"
+        next unless File.exists?(full_path)
+        return @@light_mobile_view_cache[controller_name][action_name][name] = true
+      end
+    end
+
+    return @@light_mobile_view_cache[controller_name][action_name][name] = false
   end
 end

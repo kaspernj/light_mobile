@@ -9,7 +9,7 @@
     = content_for(:head)
 
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"}
-  %body{class: ["controller_#{controller_name}", "action_#{action_name}"]}
+  %body{class: ["mobile", "controller_#{controller_name}", "action_#{action_name}"]}
     - if flash.any?
       .mobile-flash-messages
         - flash.each do |key, val|

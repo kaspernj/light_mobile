@@ -1,3 +1,5 @@
+@import 'light_mobile/buttons.css.scss';
+
 input[type=text], input[type=password], input[type=tel], input[type=email], input[type=number], select, textarea {
   border: 1px solid #d5d6d6;
   border-radius: 10px;
@@ -73,6 +75,8 @@ input[type=text], input[type=password], input[type=tel], input[type=email], inpu
   }
 
   input[type=submit] {
+    @extend .mobile-button-primary;
+
     margin-top: 10px;
   }
 }

@@ -1,21 +1,21 @@
 @import 'buttons.css.scss';
 
 div.pagination {
-  a, span, em.current {
+  > a, > span, > em.current {
     @extend .mobile-button-mini;
     display: inline-table !important;
     width: 45px;
   }
 
-  .previous_page, .next_page {
+  > .previous_page, > .next_page {
     width: 90px;
   }
 
-  em.current {
+  > em.current {
     font-weight: bold;
   }
 
-  span.disabled {
+  > span.disabled {
     color: grey;
   }
 }

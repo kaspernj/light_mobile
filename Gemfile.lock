@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    light_mobile (0.0.11)
+    light_mobile (0.0.12)
       agent_helpers (>= 0.0.5)
       html_gen (>= 0.0.6)
       rails (>= 4.0.0)
@@ -89,7 +89,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
-    sprockets (3.2.0)
+    sprockets (3.3.1)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)

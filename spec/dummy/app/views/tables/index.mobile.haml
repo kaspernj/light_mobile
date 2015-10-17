@@ -1,0 +1,49 @@
+%h4 Table only with headers
+%table.mobile-table.list
+  %thead
+    %tr
+      - 4.times do |count|
+        %th Col #{count}
+
+%h4 Table with header, one row and one column
+%table.mobile-table.list
+  %thead
+    %tr
+      %th Col 1
+  %tbody
+    - 1.times do |count|
+      %tr
+        %td Col #{count}
+
+%h4 Table with header, one row and several columns
+%table.mobile-table.list
+  %thead
+    %tr
+      %th Col 1
+  %tbody
+    - 4.times do |count|
+      %tr
+        %td Col #{count}
+
+%h4 Table with one row header and body
+%table.mobile-table.list
+  %thead
+    %tr
+      - 4.times do |count|
+        %th Col #{count}
+  %tbody
+    %tr
+      - 4.times do |count|
+        %td Col #{count}
+
+%h4 Table with one header and multiple body rows
+%table.mobile-table.list
+  %thead
+    %tr
+      - 4.times do |count|
+        %th Col #{count}
+  %tbody
+    - 4.times do
+      %tr
+        - 4.times do |count|
+          %td Col #{count}

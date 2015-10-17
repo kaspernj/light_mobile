@@ -17,8 +17,11 @@
 
     th:last-child {
       border: 1px solid #ababab;
-      border-left: none;
       border-top-right-radius: 10px;
+    }
+
+    th:last-child:not(:first-child) {
+      border-left: none;
     }
 
     th:not(:first-child):not(:last-child) {
@@ -65,13 +68,21 @@
 
     td:last-child {
       border: 1px solid #ababab;
-      border-left: none;
+
       border-top: none;
       border-top-right-radius: 0px;
     }
 
+    td:last-child:not(:first-child) {
+      border-left: none;
+    }
+
     td:not(:first-child):not(:last-child) {
       border-top: none;
+    }
+
+    td {
+      border-top: none !important;
     }
   }
 

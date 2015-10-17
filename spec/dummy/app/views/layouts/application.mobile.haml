@@ -1,0 +1,8 @@
+- content_for :menu_items do
+  .menu_item= link_to "Dashboard", root_path
+  .menu_item= link_to "Tables", tables_path
+
+- content_for :head do
+  = stylesheet_link_tag "application_mobile"
+
+= render "layouts/light_mobile_basic_layout"

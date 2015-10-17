@@ -7,12 +7,20 @@ module LightMobile::DynamicRenderer
       render_mobile = true
     end
 
+    puts "RenderMobile: #{render_mobile}"
+
     if render_mobile
       name = args[0]
       name = action_name.to_sym if !name.is_a?(Symbol) && !name.is_a?(String)
 
+      puts "Name: #{name} (#{name.class.name})"
+
       if name.is_a? Symbol
+        puts "Name is a symbol"
+
         if light_mobile_view_exists?(name)
+          puts "View exists"
+
           request.format = :mobile
           self.formats = [:mobile, :html]
         end
@@ -43,6 +51,9 @@ private
     view_paths.each do |view_path|
       ActionView::Template::Handlers.extensions.each do |handler|
         full_path = "#{view_path}/#{controller_path}/#{name}.mobile.#{handler}"
+
+        puts "Checking path: #{full_path}"
+
         next unless File.exists?(full_path)
         return @@light_mobile_view_cache[controller_name][action_name][name] = true
       end

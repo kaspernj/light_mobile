@@ -1,4 +1,4 @@
-@import 'light_mobile/buttons.css.scss';
+@import 'light_mobile/buttons.scss';
 
 input[type=text], input[type=password], input[type=tel], input[type=email], input[type=number], select, textarea {
   border: 1px solid #d5d6d6;
@@ -47,6 +47,55 @@ input[type=text], input[type=password], input[type=tel], input[type=email], inpu
 
     &:nth-child(5), &:nth-child(6) {
       width: 60px;
+    }
+  }
+
+  .input.check_boxes {
+    border: 1px solid #cecece;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    > label {
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    /* The first check-box element should have a border on the top to make a seperation between that and the label of the input */
+    > :nth-child(2) {
+      border-top: 1px solid #cecece;
+    }
+
+    /* All the check-box elements should have a border on the bottom (not the title-label and the last hidden element) */
+    > :not(:first-child):not(:nth-last-child(2)) {
+      border-bottom: 1px solid #cecece;
+    }
+
+    /* When the selected background-color appear on the last element, it should bent the lower corners to fit the borders */
+    > :nth-last-child(2) {
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+    }
+
+    span.checkbox {
+      display: block;
+
+      label {
+        display: inline-block;
+        padding-left: 5px;
+        padding: 10px;
+      }
+
+      input[type=checkbox] {
+        display: inline;
+        width: auto;
+        margin-left: 10px;
+        border: 1px solid black;
+      }
+
+      &.light-mobile-checked {
+        background: linear-gradient(#7db1e1, #5995cb);
+        transition: background 1000ms linear;
+      }
     }
   }
 

@@ -12,4 +12,5 @@
 #
 #= require light_mobile/flash_errors
 #= require light_mobile/menu
+#= require light_mobile/simple_form
 #= require light_mobile/tabs

@@ -1,0 +1,9 @@
+@import 'light_mobile/buttons.scss';
+
+.simple_form {
+  input[type=submit] {
+    @extend .mobile-button-primary;
+
+    margin-top: 10px;
+  }
+}

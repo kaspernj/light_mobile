@@ -1,0 +1,24 @@
+.simple_form {
+  .input.date > select.date, .input.datetime > select.datetime {
+    &:nth-child(4) {
+      width: 70px;
+    }
+
+    &:nth-child(3) {
+      width: 110px;
+    }
+
+    &:nth-child(2) {
+      width: 60px;
+    }
+
+    &:nth-child(5), &:nth-child(6) {
+      width: 60px;
+    }
+  }
+
+  // Time- and date-selects should be limited in size to not fill multiple lines.
+  .input.time > select.time {
+    width: 60px;
+  }
+}

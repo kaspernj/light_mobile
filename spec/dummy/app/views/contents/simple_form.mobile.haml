@@ -1,8 +1,11 @@
 - content_for(:header_title) { "SimpleForm" }
 
 = simple_form_for :test do |f|
-  = f.input :string, as: :string
+  = f.input :string, as: :string, hint: "Test Test Test Test Test Test Test Test Test Test Test Test Test Test"
   = f.input :integer, as: :integer
   = f.input :check_boxes, as: :check_boxes, collection: ["Test 1", "Test 2", "Test 3", "Test 4"]
-  = f.input :boolean, as: :boolean
+  = f.input :boolean, as: :boolean, label: "Boolean Boolean Boolean Boolean Boolean Boolean Boolean"
   = f.input :select, as: :select, collection: ["Test 1", "Test 2", "Test 3", "Test 4"]
+  = f.input :radio_buttons, as: :radio_buttons, collection: ["Test 1", "Test 2", "Test 3", "Test 4"]
+
+  = f.submit

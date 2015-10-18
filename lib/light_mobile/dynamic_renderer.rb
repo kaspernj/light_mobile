@@ -7,20 +7,12 @@ module LightMobile::DynamicRenderer
       render_mobile = true
     end
 
-    puts "RenderMobile: #{render_mobile}"
-
     if render_mobile
       name = args[0]
       name = action_name.to_sym if !name.is_a?(Symbol) && !name.is_a?(String)
 
-      puts "Name: #{name} (#{name.class.name})"
-
       if name.is_a? Symbol
-        puts "Name is a symbol"
-
         if light_mobile_view_exists?(name)
-          puts "View exists"
-
           request.format = :mobile
           self.formats = [:mobile, :html]
         end

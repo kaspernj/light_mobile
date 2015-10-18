@@ -44,8 +44,6 @@ private
       ActionView::Template::Handlers.extensions.each do |handler|
         full_path = "#{view_path}/#{controller_path}/#{name}.mobile.#{handler}"
 
-        puts "Checking path: #{full_path}"
-
         next unless File.exists?(full_path)
         return @@light_mobile_view_cache[controller_name][action_name][name] = true
       end
